@@ -1,0 +1,667 @@
+{
+  "pageTitle": "Cobalt - Intuitive Finance Landing Page",
+  "metadata": {
+    "description": "Complete specification for recreating the Cobalt finance landing page. This JSON contains all layout, theme, and component information needed to build the page.",
+    "framework": "Next.js with TypeScript",
+    "uiLibrary": "shadcn/ui",
+    "styling": "Tailwind CSS"
+  },
+  "theme": {
+    "darkMode": true,
+    "colors": {
+      "primaryBackground": {
+        "value": "#0D1117",
+        "description": "Very dark blue-grey background"
+      },
+      "secondaryBackground": {
+        "value": "#1A202C",
+        "description": "Slightly lighter dark blue-grey for cards/panels"
+      },
+      "primaryText": {
+        "value": "#FFFFFF",
+        "description": "White text for headings and primary content"
+      },
+      "secondaryText": {
+        "value": "#A0AEC0",
+        "description": "Light grey for body text and secondary content"
+      },
+      "accentBlue": {
+        "value": "#3B82F6",
+        "description": "Medium blue/teal for highlights, links, and interactive elements (chart lines, button hovers)"
+      },
+      "buttonPrimaryBg": {
+        "value": "#1E3A8A",
+        "description": "Darker, muted blue for primary buttons"
+      },
+      "buttonPrimaryText": {
+        "value": "#FFFFFF",
+        "description": "White text on primary buttons"
+      },
+      "success": {
+        "value": "#28a745",
+        "description": "Green for positive indicators"
+      },
+      "warning": {
+        "value": "#ffc107",
+        "description": "Orange/Yellow for cautionary/negative indicators"
+      },
+      "border": {
+        "value": "#4A5568",
+        "description": "Subtle, light grey for component outlines"
+      },
+      "subtleGradient": {
+        "description": "Very subtle radial gradient from dark blue to black in background areas"
+      }
+    },
+    "typography": {
+      "fontFamily": "Inter, sans-serif",
+      "headings": {
+        "h1": {
+          "fontSize": "3.5rem",
+          "fontWeight": "bold",
+          "color": "primaryText",
+          "lineHeight": "1.2"
+        },
+        "h2": {
+          "fontSize": "2.5rem",
+          "fontWeight": "bold",
+          "color": "primaryText",
+          "lineHeight": "1.3"
+        },
+        "h3": {
+          "fontSize": "1.5rem",
+          "fontWeight": "600",
+          "color": "primaryText",
+          "lineHeight": "1.4"
+        }
+      },
+      "body": {
+        "fontSize": "1rem",
+        "fontWeight": "normal",
+        "color": "secondaryText",
+        "lineHeight": "1.6"
+      },
+      "link": {
+        "color": "accentBlue",
+        "textDecoration": "none",
+        "hoverColor": "accentBlue",
+        "hoverUnderline": false
+      }
+    },
+    "spacing": {
+      "containerPaddingX": "8rem",
+      "sectionPaddingY": "6rem",
+      "componentGapSmall": "1rem",
+      "componentGapMedium": "2rem",
+      "componentGapLarge": "4rem"
+    },
+    "borderRadius": "0.5rem",
+    "shadows": {
+      "description": "Minimal and very subtle, almost imperceptible, adhering to shadcn/ui defaults"
+    },
+    "aesthetic": "Minimalist, clean, high-contrast, professional, modern, data-driven"
+  },
+  "layout": {
+    "type": "SinglePageScroll",
+    "sections": [
+      {
+        "id": "header",
+        "type": "Navbar",
+        "position": "top",
+        "sticky": true,
+        "layout": {
+          "display": "flex",
+          "justifyContent": "space-between",
+          "alignItems": "center",
+          "padding": "1rem 8rem"
+        },
+        "components": [
+          {
+            "type": "Logo",
+            "text": "@cobalt",
+            "icon": {
+              "type": "Abstract circular dot",
+              "color": "accentBlue"
+            },
+            "shadcnComponent": "Custom/Text",
+            "href": "/"
+          },
+          {
+            "type": "Navigation",
+            "items": [
+              {
+                "type": "NavLink",
+                "text": "Blog",
+                "href": "/blog",
+                "shadcnComponent": "Link"
+              },
+              {
+                "type": "Button",
+                "variant": "default",
+                "text": "Join the waitlist",
+                "shadcnComponent": "Button",
+                "style": {
+                  "backgroundColor": "buttonPrimaryBg",
+                  "color": "buttonPrimaryText",
+                  "borderRadius": "borderRadius"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hero-section",
+        "type": "HeroSection",
+        "background": {
+          "color": "primaryBackground",
+          "effects": [
+            "Subtle radial gradient",
+            "Scattered faint light particles (stars-like effect)"
+          ]
+        },
+        "layout": {
+          "display": "flex",
+          "flexDirection": "column",
+          "alignItems": "center",
+          "padding": "6rem 8rem",
+          "textAlign": "center"
+        },
+        "components": [
+          {
+            "type": "Heading",
+            "level": 1,
+            "text": "Unleash the power of intuitive finance",
+            "shadcnComponent": "h1"
+          },
+          {
+            "type": "Paragraph",
+            "text": "Say goodbye to the outdated financial tools. Every small business owner, regardless of the background, can now manage their business like a pro. Simple. Intuitive. And never boring.",
+            "shadcnComponent": "p",
+            "maxWidth": "600px"
+          },
+          {
+            "type": "ButtonGroup",
+            "layout": "flex",
+            "gap": "1rem",
+            "items": [
+              {
+                "type": "Button",
+                "variant": "default",
+                "text": "Join the waitlist",
+                "shadcnComponent": "Button",
+                "style": {
+                  "backgroundColor": "buttonPrimaryBg",
+                  "color": "buttonPrimaryText",
+                  "borderRadius": "borderRadius"
+                }
+              },
+              {
+                "type": "Button",
+                "variant": "ghost",
+                "text": "Learn more",
+                "icon": "ArrowDown",
+                "shadcnComponent": "Button",
+                "style": "Text link with icon"
+              }
+            ]
+          },
+          {
+            "type": "Visual",
+            "description": "Large, detailed interactive dashboard UI screenshot",
+            "componentType": "CustomDashboardDisplay",
+            "details": {
+              "sections": [
+                {
+                  "name": "Sidebar",
+                  "items": [
+                    "Insights",
+                    "Company",
+                    "Transactions",
+                    "Cards",
+                    "Accounting",
+                    "Settings",
+                    "Partner rewards"
+                  ],
+                  "style": "Dark panel, text links with icons",
+                  "shadcnComponent": "Sidebar"
+                },
+                {
+                  "name": "MainContentHeader",
+                  "layout": "flex",
+                  "justifyContent": "space-between",
+                  "alignItems": "center",
+                  "elements": [
+                    {
+                      "type": "Input",
+                      "variant": "search",
+                      "placeholder": "Search anything...",
+                      "shadcnComponent": "Input"
+                    },
+                    {
+                      "type": "Button",
+                      "variant": "icon",
+                      "icon": "Configure",
+                      "text": "Configure",
+                      "shadcnComponent": "Button"
+                    },
+                    {
+                      "type": "Avatar",
+                      "src": "user-avatar-image",
+                      "shadcnComponent": "Avatar"
+                    }
+                  ]
+                },
+                {
+                  "name": "StatCardsGrid",
+                  "layout": "grid",
+                  "columns": 4,
+                  "gap": "1rem",
+                  "items": [
+                    {
+                      "type": "Card",
+                      "shadcnComponent": "Card",
+                      "title": "Sales today",
+                      "value": "$1,036.82",
+                      "indicator": "+21%",
+                      "indicatorVariant": "success"
+                    },
+                    {
+                      "type": "Card",
+                      "shadcnComponent": "Card",
+                      "title": "Avg customer spend",
+                      "value": "$244.82",
+                      "indicator": "-0.7%",
+                      "indicatorVariant": "warning"
+                    },
+                    {
+                      "type": "Card",
+                      "shadcnComponent": "Card",
+                      "title": "Your potential savings",
+                      "value": "$1,870.00",
+                      "subText": "$598.00"
+                    },
+                    {
+                      "type": "Card",
+                      "shadcnComponent": "Card",
+                      "title": "Increase in monthly spend",
+                      "value": "72%",
+                      "description": "Your spending on SealSoftware grew up significantly in the last 30 days."
+                    }
+                  ]
+                },
+                {
+                  "name": "TimeSeriesChart",
+                  "componentType": "CustomChart",
+                  "details": {
+                    "type": "LineChart",
+                    "dataRepresenting": "Income vs Expenses",
+                    "controls": [
+                      {
+                        "type": "Dropdown",
+                        "label": "Last 4 weeks",
+                        "shadcnComponent": "Select"
+                      },
+                      {
+                        "type": "Dropdown",
+                        "label": "Jun 1-Jul 5",
+                        "shadcnComponent": "Select"
+                      },
+                      {
+                        "type": "Button",
+                        "text": "Daily",
+                        "shadcnComponent": "Button",
+                        "variant": "outline"
+                      },
+                      {
+                        "type": "Button",
+                        "text": "Weekly",
+                        "shadcnComponent": "Button",
+                        "variant": "outline"
+                      },
+                      {
+                        "type": "Button",
+                        "text": "Filter",
+                        "shadcnComponent": "Button",
+                        "variant": "outline"
+                      }
+                    ],
+                    "chartLibrary": "Recharts",
+                    "containerComponent": "Card"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "feature-text-section-1",
+        "type": "FeatureSection",
+        "layout": {
+          "display": "grid",
+          "gridTemplateColumns": "1fr 1fr",
+          "gap": "4rem",
+          "padding": "6rem 8rem",
+          "alignItems": "center"
+        },
+        "components": [
+          {
+            "type": "Heading",
+            "level": 2,
+            "text": "Who said finance has to be boring?",
+            "shadcnComponent": "h2"
+          },
+          {
+            "type": "Paragraph",
+            "text": "With Cobalt, managing your business finances is effortless, empowering, and anything but boring. Our intuitive platform brings clarity to your cash flow, simplifies your financial decision-making, and puts the power of advanced financial management right at your fingertips. Say no to spreadsheets and tools designed in the 80s.",
+            "shadcnComponent": "p"
+          }
+        ]
+      },
+      {
+        "id": "feature-cards-section-1",
+        "type": "FeatureSection",
+        "layout": {
+          "display": "flex",
+          "flexDirection": "column",
+          "padding": "6rem 8rem",
+          "textAlign": "center",
+          "maxWidth": "1200px",
+          "margin": "0 auto"
+        },
+        "components": [
+          {
+            "type": "Heading",
+            "level": 2,
+            "text": "Everything you need. Nothing you don't",
+            "shadcnComponent": "h2"
+          },
+          {
+            "type": "Paragraph",
+            "text": "Financial management and visibility in one place. Experience a flexible toolkit that makes every task feel like a breeze.",
+            "shadcnComponent": "p",
+            "maxWidth": "600px",
+            "margin": "0 auto 4rem"
+          },
+          {
+            "type": "Grid",
+            "columns": 3,
+            "gap": "2rem",
+            "items": [
+              {
+                "type": "Card",
+                "shadcnComponent": "Card",
+                "title": "Insights at your fingertips",
+                "description": "All your data and finances in one place to provide quick answers and make decisions instantly.",
+                "visual": {
+                  "type": "Image",
+                  "description": "Small dashboard UI snippet with graph and metrics"
+                }
+              },
+              {
+                "type": "Card",
+                "shadcnComponent": "Card",
+                "title": "Manage in real time",
+                "description": "Have full control of your business finances on the go using our iOS/Android mobile apps. Because, you know, it's 2023.",
+                "visual": {
+                  "type": "Image",
+                  "description": "Mobile phone illustration displaying a mobile app UI"
+                }
+              },
+              {
+                "type": "Card",
+                "shadcnComponent": "Card",
+                "title": "Important business alerts",
+                "description": "Choose the alerts you need and receive them via email, mobile or Slack. Review and take action in one click.",
+                "visual": {
+                  "type": "Image",
+                  "description": "Notification panel with 'Approve', 'Decline', 'Edit' buttons"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "feature-cards-section-2",
+        "type": "FeatureSection",
+        "layout": {
+          "display": "grid",
+          "gridTemplateColumns": "1fr 1fr",
+          "gap": "4rem",
+          "padding": "6rem 8rem"
+        },
+        "components": [
+          {
+            "type": "Card",
+            "shadcnComponent": "Card",
+            "title": "Connect all your apps",
+            "description": "Bring your data with our built-in integrations for accounting, revenue tools and banking.",
+            "visual": {
+              "type": "Image",
+              "description": "Grid of various application logos (Google, Stripe, Amazon, QuickBooks, etc.)"
+            }
+          },
+          {
+            "type": "Card",
+            "shadcnComponent": "Card",
+            "title": "You're in control",
+            "description": "Lightning fast. Shortcuts for everything. Command+K on Mac, Ctrl-K on Windows. Dark mode.",
+            "visual": {
+              "type": "Image",
+              "description": "Illustration of a keyboard with an overlaid popup menu for commands/shortcuts"
+            }
+          }
+        ]
+      },
+      {
+        "id": "genius-section",
+        "type": "FeatureSection",
+        "layout": {
+          "display": "flex",
+          "flexDirection": "column",
+          "padding": "6rem 8rem",
+          "textAlign": "center",
+          "maxWidth": "1200px",
+          "margin": "0 auto"
+        },
+        "components": [
+          {
+            "type": "Heading",
+            "level": 2,
+            "text": "Meet Genius",
+            "shadcnComponent": "h2"
+          },
+          {
+            "type": "Paragraph",
+            "text": "Our AI-driven assistant is designed to decode complex financial figures and illuminate key trends in your business.",
+            "shadcnComponent": "p",
+            "maxWidth": "600px",
+            "margin": "0 auto 4rem"
+          },
+          {
+            "type": "Grid",
+            "columns": 2,
+            "gap": "2rem",
+            "items": [
+              {
+                "type": "Card",
+                "shadcnComponent": "Card",
+                "title": "Smart forecasting",
+                "description": "Harness the power of Cobalt's predictive analytics to map out the financial future of your business.",
+                "visual": {
+                  "type": "Image",
+                  "description": "Line chart with a 'Critical balance alert' tooltip"
+                }
+              },
+              {
+                "type": "Card",
+                "shadcnComponent": "Card",
+                "title": "Chat with Genius",
+                "description": "Just ask. With Genius by your side, navigating the financial maze becomes intuitive and effortless.",
+                "visual": {
+                  "type": "Component",
+                  "description": "Chat interface showing a prompt 'Hey! How can I help you?' and a user input 'Who's our most profitable customer?' with an 'Ask Genius' button",
+                  "elements": [
+                    {
+                      "type": "Text",
+                      "content": "Hey! How can I help you?"
+                    },
+                    {
+                      "type": "Input",
+                      "placeholder": "Who's our most profitable customer?",
+                      "shadcnComponent": "Input"
+                    },
+                    {
+                      "type": "Button",
+                      "text": "Ask Genius",
+                      "shadcnComponent": "Button"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "call-to-action-footer-section",
+        "type": "CallToActionSection",
+        "background": {
+          "color": "primaryBackground",
+          "effects": ["Subtle radial gradient"]
+        },
+        "layout": {
+          "display": "flex",
+          "flexDirection": "column",
+          "alignItems": "center",
+          "padding": "6rem 8rem",
+          "textAlign": "center"
+        },
+        "components": [
+          {
+            "type": "Heading",
+            "level": 2,
+            "text": "See where financial automation can take your business.",
+            "shadcnComponent": "h2"
+          },
+          {
+            "type": "Paragraph",
+            "text": "The first financial tool you'll love. And the last one you'll ever need",
+            "shadcnComponent": "p",
+            "maxWidth": "600px",
+            "margin": "1rem auto 2rem"
+          },
+          {
+            "type": "Button",
+            "variant": "default",
+            "text": "Join the waitlist",
+            "shadcnComponent": "Button",
+            "style": {
+              "backgroundColor": "buttonPrimaryBg",
+              "color": "buttonPrimaryText",
+              "borderRadius": "borderRadius"
+            }
+          }
+        ]
+      },
+      {
+        "id": "footer",
+        "type": "Footer",
+        "layout": {
+          "display": "grid",
+          "gridTemplateColumns": "repeat(4, 1fr)",
+          "gap": "2rem",
+          "padding": "4rem 8rem 2rem",
+          "borderTop": "1px solid border"
+        },
+        "components": [
+          {
+            "type": "CopyrightText",
+            "text": "© 2023 Cobalt Financial Technologies Inc.",
+            "shadcnComponent": "Text"
+          },
+          {
+            "type": "LegalLinks",
+            "layout": "flex",
+            "flexDirection": "column",
+            "gap": "0.5rem",
+            "items": [
+              {
+                "type": "NavLink",
+                "text": "Privacy Policy",
+                "href": "/privacy-policy",
+                "shadcnComponent": "Link"
+              },
+              {
+                "type": "NavLink",
+                "text": "Terms of Use",
+                "href": "/terms-of-use",
+                "shadcnComponent": "Link"
+              }
+            ]
+          },
+          {
+            "type": "DisclaimerText",
+            "text": "Cobalt is a trademark or registered trademark of Cobalt Financial Technologies Inc. Any other trademarks are the property of their respective owners. Unless otherwise noted, use of third party logos does not imply endorsement of, sponsorship of, or affiliation with Cobalt.\nCobalt is a financial technology company, not a bank. Banking services are provided by Celtic Bank and Evolve Bank & Trust®, Members FDIC.",
+            "shadcnComponent": "Text",
+            "fontSize": "0.875rem",
+            "color": "secondaryText"
+          },
+          {
+            "type": "SocialMediaIcons",
+            "layout": "flex",
+            "gap": "1rem",
+            "items": [
+              {
+                "icon": "X",
+                "href": "#",
+                "shadcnComponent": "Button",
+                "variant": "ghost"
+              },
+              {
+                "icon": "LinkedIn",
+                "href": "#",
+                "shadcnComponent": "Button",
+                "variant": "ghost"
+              },
+              {
+                "icon": "Facebook",
+                "href": "#",
+                "shadcnComponent": "Button",
+                "variant": "ghost"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "componentMapping": {
+    "shadcnComponents": {
+      "Button": "components/ui/button.tsx",
+      "Card": "components/ui/card.tsx",
+      "Input": "components/ui/input.tsx",
+      "Avatar": "components/ui/avatar.tsx",
+      "Link": "components/ui/link (or Next.js Link)",
+      "Select": "components/ui/select.tsx",
+      "Sidebar": "components/ui/sidebar.tsx"
+    },
+    "customComponents": {
+      "Navbar": "components/Navbar.tsx",
+      "Hero": "components/Hero.tsx",
+      "FeatureSection": "components/FeatureSection.tsx",
+      "DashboardDisplay": "components/DashboardDisplay.tsx",
+      "Footer": "components/Footer.tsx"
+    }
+  },
+  "implementationNotes": {
+    "styling": "Use Tailwind CSS classes mapped from theme values",
+    "components": "Extract all visual pieces into separate reusable components in /components/",
+    "serverComponents": "Use server components by default, add 'use client' only when interactivity is needed",
+    "chartLibrary": "Use Recharts for the dashboard chart component",
+    "icons": "Use lucide-react for icons (ArrowDown, Configure, etc.)",
+    "images": "Place dashboard screenshots and feature images in /public/ folder"
+  }
+}
