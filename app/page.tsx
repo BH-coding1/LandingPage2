@@ -1,9 +1,21 @@
-import Image from "next/image";
+import { Hero } from "@/components/Hero";
+import { FeatureTextSection1 } from "@/components/FeatureTextSection1";
+import { FeatureCardsSection1 } from "@/components/FeatureCardsSection1";
+import { FeatureCardsSection2 } from "@/components/FeatureCardsSection2";
+import { GeniusSection } from "@/components/GeniusSection";
+import { CallToActionSection } from "@/components/CallToActionSection";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      
+    <div className="min-h-screen bg-background">
+      <Hero />
+      <FeatureTextSection1 />
+      <FeatureCardsSection1 />
+      <FeatureCardsSection2 />
+      <GeniusSection />
+      <CallToActionSection />
+      <Footer />
     </div>
   );
 }
